@@ -1,11 +1,13 @@
 import os
 
 
-def write_count_words(counter, output_folder):
+def write_word_counts(output_folder, word_counts):
+
     if not os.path.exists(output_folder):
         os.makedirs(output_folder)
 
     output_file = os.path.join(output_folder, "wordcount.tsv")
+
     with open(output_file, "w", encoding="utf-8") as f:
-        for key, value in counter.items():
-            f.write(f"{key}\t{value}\n")
+        for word, count in word_counts.items():
+            f.write(f"{word}\t{count}\n")

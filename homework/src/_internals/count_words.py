@@ -1,5 +1,5 @@
 def count_words(words):
-    counter = {}
+    word_counts = {}
     for word in words:
-        counter[word] = counter.get(word, 0) + 1
-    return counter
+        word_counts[word] = word_counts.get(word, 0) + 1
+    return word_counts
